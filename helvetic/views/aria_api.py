@@ -129,7 +129,7 @@ class ScaleUploadView(View):
 			else:
 				try:
 					measured_user = User.objects.get(id=uid)
-				except User.NotFound:
+				except User.DoesNotExist:
 					measured_user = None
 			measurement = Measurement.objects.create(
 				user=measured_user,

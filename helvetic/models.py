@@ -115,10 +115,10 @@ class UserProfile(models.Model):
 		exists.
 		"""
 
-		#try:
-		return self.user.measurement.all().order_by('-when')[0]
-		#except:
-		#	return None
+		try:
+			return self.user.measurement.all().order_by('-when')[0]
+		except:
+			return None
 
 	def age(self, from_date=None):
 		"""
