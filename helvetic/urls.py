@@ -1,7 +1,7 @@
 # -*- mode: python; indent-tabs-mode: nil; tab-width: 2 -*-
 from __future__ import absolute_import
 from django.conf.urls import include, url
-from .views import aria_api, registration, webui
+from .views import aria_api, registration, webui, web_api
 
 urlpatterns = [
   url(
@@ -44,6 +44,18 @@ urlpatterns = [
     r'^$',
     webui.IndexView.as_view(),
     name='index'
+  ),
+
+  url(
+    r'^api/users/(?P<pk>[\d]+)/measurements/?$',
+    web_api.MeasurementListView.as_view(),
+    name='measurement_list'
+  ),
+
+  url(
+    r'^api/measurements/(?P<pk>[\d]+)/?$',
+    web_api.MeasurementView.as_view(),
+    name='measurement'
   ),
 
   #url(r'^$', 'helvetic.views.home', name='home'),

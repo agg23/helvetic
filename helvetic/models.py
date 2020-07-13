@@ -159,6 +159,12 @@ class Measurement(models.Model):
 		null=True
 	)
 
+	synced_to_hk = models.BooleanField(
+		blank=True,
+		null=False,
+		default=False,
+	)
+
 def _generate_auth_expiry():
 	"""
 	Generate an expiry time for an authorisation token (T + 1 hour)
