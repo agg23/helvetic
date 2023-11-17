@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['www.fitbit.com', 'localhost', '10.0.1.11']
+ALLOWED_HOSTS = ['www.fitbit.com', 'localhost', '10.0.1.11', '*']
 
 
 # Application definition
