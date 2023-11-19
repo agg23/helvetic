@@ -27,6 +27,19 @@ It requires local DNS spoofing in order to intercept requests originally bound f
 * Data access
 * Graphs
 
+## Setup
+
+**TODO:** Finish
+
+```bash
+python manage.py migrate
+python manage.py createsuperuser --username=foo --email=foo@example.com
+```
+
+Set up DNS forwarding from `fitbit.com` to your Docker container.
+
+**NOTE:** You must bind this container to port 80 on the host, otherwise the DNS redirect will not work.
+
 ## See also
 
 * `protocol.md` - Contains information about the FitBit Aria protocol (version 3)
